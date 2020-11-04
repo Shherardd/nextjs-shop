@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "dev:inspect": "npm --node-options=--inspect=0.0.0.0:9229 run dev"
   },
   "author": "",
   "license": "ISC",
