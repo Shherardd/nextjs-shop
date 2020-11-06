@@ -5,7 +5,7 @@ import DB from '../../../database/db'
 const ProductId = async (req = NextApiRequest, res = NextApiResponse) => {
     const ProductId = req.query.ProductId
     const db = new DB()
-    const product = await db.getById(ProductId)
+    const avo = await db.getById(ProductId)
     /*
 
     res.statusCode = 200
@@ -14,7 +14,7 @@ const ProductId = async (req = NextApiRequest, res = NextApiResponse) => {
     
     */
     // helper de next ->
-    res.status(200).json({product})
+    res.status(200).json({avo})
 
 }
 
