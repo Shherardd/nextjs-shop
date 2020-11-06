@@ -1,11 +1,11 @@
 import React from 'react'
 /* Path aliases */
-import { Navbar } from '@components/Navbar'
+import { Header } from '@components/Header'
 
 const Layout = ({ children }) => {
     return (
         <>
-            <Navbar/>
+            <Header/>
                 {children}
             <footer>Footer right there</footer>
         </>

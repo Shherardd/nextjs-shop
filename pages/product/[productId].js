@@ -13,14 +13,15 @@ const ProductItem = () => {
     
     useEffect( async () => {
         if(productId) {
-            try {
+            try {                
                 const response = await fetch(`/api/avo/${productId}`)
-                const { avo, avo: { attributes: {shape} } } = await response.json() 
+                const { avo } = await response.json() 
                 if(avo != null){
                     setAvo(avo)
                     setIsLoading(false)
-                    /* Destructuring excercice of shape from response.*/
-                    console.log(shape)
+                    setNotFound(false) 
+                    /* Destructuring excercice of shape from response.
+                    console.log(shape)*/
                     return
                 }
                 setIsLoading(false)
@@ -28,6 +29,10 @@ const ProductItem = () => {
                 
             } catch (error) {
                 console.log(error)                
+            }
+
+            return () => {
+                
             }
         }
 

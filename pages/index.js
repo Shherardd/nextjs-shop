@@ -23,7 +23,7 @@ const Home = () => {
     }, [])
 
     return (
-        <div>
+        <section>
             {/*<Navbar/>*/}
             <h1>index</h1>
             <ul>
@@ -31,7 +31,20 @@ const Home = () => {
                     <li key={product.id}>{product.name}</li>
                 ) }
             </ul>    
-        </div>
+            <style jsx>{`
+            section {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 10px 30px;
+            }
+            ul {
+                list-style: none;
+            }
+
+            `                
+            }</style>
+        </section>
     )
 }
 
