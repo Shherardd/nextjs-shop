@@ -10,14 +10,21 @@ const Home = () => {
             .then(({ data, length}) => {
                 setProductList(data)
             })*/
-        const response = await fetch('/api/avo')
-        const { data } = await response.json()
-        setProductList(data)
+        let mounted = true
+        if (mounted) {
+            const response = await fetch('/api/avo')
+            const { data } = await response.json()
+            setProductList(data)
+        }
+
+        return () => {
+            mounted = false
+        }
     }, [])
 
     return (
         <div>
-            <Navbar/>
+            {/*<Navbar/>*/}
             <h1>index</h1>
             <ul>
                 { productList.map((product) => 
